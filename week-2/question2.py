@@ -1,8 +1,12 @@
 def avg(data):
 # 請用你的程式補完這個函式的區塊
     count = int(data['count'])
-    total = sum([item["salary"] for item in data["employees"]])
-    print(total/count)
+    totalNum = 0
+    
+    for value in data['employees']:
+        totalNum = totalNum + value['salary']
+        
+    print(totalNum/count)
 
 avg({
     "count":3,
