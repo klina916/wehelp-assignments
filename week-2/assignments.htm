@@ -1,0 +1,200 @@
+# 問題一 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function calculate(min, max){
+    // 請用你的程式補完這個函式的區塊
+    var sum=0;
+    for (min; min <= max ; min++) {
+      sum += min;
+    }
+    return sum;
+}
+var result1=calculate(1, 3); // 你的程式要能夠計算 1+2+3，最後印出 6
+console.log(result1);
+var result2=calculate(4, 8); // 你的程式要能夠計算 4+5+6+7+8，最後印出 30
+console.log(result2);
+
+</script>
+<title>Week-2 Request 1</title>
+</head>
+<body>
+    <div>函式計算總和</div>
+    <div>console.log() 顯示結果</div>
+</body>
+</html>
+
+
+# --------------------------------------------------------------------------------------------------------
+
+
+# 問題二
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function avg(data){
+    // 請用你的程式補完這個函式的區塊 }
+    var count = data.count;
+    var sum = 0;
+    data["employees"].forEach((person) => {
+        sum+=person.salary
+    });
+
+    console.log(`${sum/count}`);
+}
+
+avg(
+    {
+        "count":3,
+        "employees":[
+            {
+                "name":"John",
+                "salary":30000
+            },
+            {
+                "name":"Bob",
+                "salary":60000 },
+            {
+                "name":"Jenny",
+                "salary":50000
+            }
+         ]
+      }
+  ); // 呼叫 avg 函式
+
+</script>
+<title>Week-2 Request 2</title>
+</head>
+<body>
+    <div>函式計算平均薪資</div>
+    <div>console.log() 顯示結果</div>
+</body>
+</html>
+
+
+# --------------------------------------------------------------------------------------------------------
+
+
+# 問題三
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function maxProduct(nums){
+    // 請用你的程式補完這個函式的區塊
+    var productList = [];
+    for (i = 0 ; i < nums.length ; ++i){
+        for ( j = i +1 ; j < nums.length ; ++j ){
+            var total = nums[i] * nums[j]
+            productList.push(total);
+        }
+    }
+    var maxNum = Math.max(...productList);
+    console.log(maxNum);
+}
+
+
+
+maxProduct([5, 20, 2, 6]) // 得到 120
+maxProduct([10, -20, 0, 3]) // 得到 30
+maxProduct([-1, 2]) // 得到 -2
+maxProduct([-1, 0, 2]) // 得到 0
+maxProduct([-1, -2, 0]) // 得到 2
+
+</script>
+<title>Week-2 Request 3</title>
+</head>
+<body>
+    <div>函式計算兩兩數字相乘後的最大值</div>
+    <div>console.log() 顯示結果</div>
+</body>
+</html>
+
+
+# --------------------------------------------------------------------------------------------------------
+
+
+# 問題四
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function twoSum(nums, target){
+    // your code here
+    var numsList = []
+    for (i=0; i < nums.length ; ++i) {
+        for  (j=i+1; j < nums.length ; ++j){
+            var sumNum = nums[i] + nums[j];
+            if (sumNum == target){
+                numsList.push(i);
+                numsList.push(j);
+                return numsList;
+            }
+        }
+    }
+}
+
+let result=twoSum([2, 11, 7, 15], 9);
+console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
+
+</script>
+<title>Week-2 Request 4</title>
+</head>
+<body>
+  <div>函式找出陣列中兩數之和為指定值的所以位置</div>
+  <div>console.log() 顯示結果</div>
+<body>
+</html>
+
+
+# --------------------------------------------------------------------------------------------------------
+
+
+# 問題五
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function maxZeros(nums){
+    // 請用你的程式補完這個函式的區塊
+    var str1 = nums.join('');
+    var numsList = str1.split("1");
+    var longest = 0;
+    for (var i = 0; i < numsList.length; i++) {
+        if (longest < numsList[i].length) {
+            longest = numsList[i].length;
+        }
+    }
+    console.log(longest);
+
+}
+maxZeros([0, 1, 0, 0]); // 得到 2
+maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
+maxZeros([1, 1, 1, 1, 1]); // 得到 0
+maxZeros([0, 0, 0, 1, 1]) // 得到 3
+
+</script>
+<title>Week-2 Request 5</title>
+</head>
+<body>
+  <div>函式計算連續出現 0 的最大長度</div>
+  <div>console.log() 顯示結果</div>
+</body>
+</html>
+
