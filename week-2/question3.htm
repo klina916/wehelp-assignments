@@ -6,11 +6,11 @@
 
 function maxProduct(nums){
     // 請用你的程式補完這個函式的區塊
-    var productList = []
+    var productList = [];
     for (i = 0 ; i < nums.length ; ++i){
         for ( j = i +1 ; j < nums.length ; ++j ){
             var total = nums[i] * nums[j]
-            productList.push(total)
+            productList.push(total);
         }
     }
     var maxNum = Math.max(...productList);
@@ -24,7 +24,7 @@ maxProduct([-1, 0, 2]) // 得到 0
 maxProduct([-1, -2, 0]) // 得到 2
 
 </script>
-<title>Week-2 Request 2</title>
+<title>Week-2 Request 3</title>
 </head>
 <body>
     <div>函式計算兩兩數字相乘後的最大值</div>
