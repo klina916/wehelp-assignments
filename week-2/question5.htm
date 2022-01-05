@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+
+function maxZeros(nums){
+    // 請用你的程式補完這個函式的區塊
+    var str1 = nums.join('');
+    var numsList = str1.split("1");
+    var longest = 0;
+    for (var i = 0; i < numsList.length; i++) {
+        if (longest < numsList[i].length) {
+            longest = numsList[i].length;
+        }
+    }
+    console.log(longest);
+
+}
+maxZeros([0, 1, 0, 0]); // 得到 2
+maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
+maxZeros([1, 1, 1, 1, 1]); // 得到 0
+maxZeros([0, 0, 0, 1, 1]) // 得到 3
+
+</script>
+<title>Week-2 Request 5</title>
+</head>
+<body>
+  <div>函式計算連續出現 0 的最大長度</div>
+  <div>console.log() 顯示結果</div>
+</body>
+</html>
