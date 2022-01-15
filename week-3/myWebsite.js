@@ -4,8 +4,6 @@
     let moreImage = document.getElementById('clickButton');
     let count = 0;
 
-    moreImage.addEventListener('click', generateImage)
-
     req.open("GET", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json", true);
 
     req.onload = function(){ // load事件，偵測連線的狀態結束
@@ -59,3 +57,4 @@
     req.send();  // 送出連線
 
     moreImage.addEventListener('click', generateImage)
+
