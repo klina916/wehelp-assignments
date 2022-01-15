@@ -57,4 +57,3 @@
     req.send();  // 送出連線
 
     moreImage.addEventListener('click', generateImage)
-
