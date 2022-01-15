@@ -2,16 +2,19 @@
     // XMLHTTpRequest 物件專門用來和伺服器做連線
     let req= new XMLHttpRequest(); 
 
-    let n = 0;
-    req.open("get", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json");
-    req.responseType = 'json';
+    req.open("GET", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json", true);
+
     req.onload = function generateImage(){  // load事件，偵測連線的狀態結束
         if(req.status == 200){  // 伺服器請求成功
+
+            // 透過 JSON.parse() 解析 JSON 字串
+            req = JSON.parse(req.responseText);
+
             let block = document.querySelector('.bob-row');
           
-            for (let i= 0+n; i < (8 + n); i++){  //圖片從第0筆開始，一次八張
+            for (let i = 0; i < 8; i++){  //圖片從第0筆開始 取八張
 
-                let uriPath = req.response['result']['results'][i];  //  API results路徑
+                let uriPath = req['result']['results'][i];  //  API results路徑
                 let subTitle = uriPath['stitle'];
 
                 // 將圖片字串用 split 函式從 "https://" 切開, 返回前兩筆結果, 第一筆在 https:// 之前為空白, 取第二個結果
@@ -38,8 +41,6 @@
                 block.appendChild(content)
 
               }
-
-            n += 8;
 
           } else{
               // 伺服器傳回了其他錯誤代碼
