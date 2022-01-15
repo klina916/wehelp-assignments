@@ -1,10 +1,18 @@
 
     // XMLHTTpRequest 物件專門用來和伺服器做連線
     let req= new XMLHttpRequest(); 
+    let moreImage = document.getElementById('clickButton');
+    let count = 0;
+
+    moreImage.addEventListener('click', generateImage)
 
     req.open("GET", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json", true);
 
-    req.onload = function generateImage(){  // load事件，偵測連線的狀態結束
+    req.onload = function(){ // load事件，偵測連線的狀態結束
+        generateImage();
+    }
+    
+    function generateImage(){  
         if(req.status == 200){  // 伺服器請求成功
 
             // 透過 JSON.parse() 解析 JSON 字串
@@ -12,7 +20,7 @@
 
             let block = document.querySelector('.bob-row');
           
-            for (let i = 0; i < 8; i++){  //圖片從第0筆開始 取八張
+            for (let i = count; i < (count+8); i++){  //圖片從第0筆開始 取八張
 
                 let uriPath = req['result']['results'][i];  //  API results路徑
                 let subTitle = uriPath['stitle'];
@@ -41,11 +49,13 @@
                 block.appendChild(content)
 
               }
-
+              count += 8;
           } else{
               // 伺服器傳回了其他錯誤代碼
               console.log('Error');  
           }
-        }
+        } 
 
     req.send();  // 送出連線
+
+    moreImage.addEventListener('click', generateImage)
