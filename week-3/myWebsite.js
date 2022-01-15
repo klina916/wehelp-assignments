@@ -1,7 +1,6 @@
-
-    // XMLHTTpRequest 物件專門用來和伺服器做連線
+// XMLHTTpRequest 物件專門用來和伺服器做連線
     let req= new XMLHttpRequest(); 
-    let moreImage = document.getElementById('clickButton');
+    let moreImage = document.querySelector(".moreButton");
     let count = 0;
 
     req.open("GET", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json", true);
