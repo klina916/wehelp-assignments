@@ -7,13 +7,11 @@
     req.responseType = 'json';
     req.onload = function generateImage(){  // load事件，偵測連線的狀態結束
         if(req.status == 200){  // 伺服器請求成功
-            let box = document.querySelector('.bob-row');
+            let block = document.querySelector('.bob-row');
           
             for (let i= 0+n; i < (8 + n); i++){  //圖片從第0筆開始，一次八張
 
-                // API路徑
-                let uriPath = req.response['result']['results'][i];
-
+                let uriPath = req.response['result']['results'][i];  //  API results路徑
                 let subTitle = uriPath['stitle'];
 
                 // 將圖片字串用 split 函式從 "https://" 切開, 返回前兩筆結果, 第一筆在 https:// 之前為空白, 取第二個結果
@@ -28,18 +26,16 @@
                 let img = document.createElement('img'); 	
                 img.className =  'object-fit'
                 img.src = imgUrl; 
-                console.log(img);
 
                 // 我是圖片標題
                 // 建立 div 元素, class name 為 title
                 let imgTitle = document.createElement('div')
                 imgTitle.className = 'title'
                 imgTitle.textContent = subTitle;
-                console.log(imgTitle);
 
                 content.appendChild(img);
                 content.appendChild(imgTitle);
-                box.appendChild(content)
+                block.appendChild(content)
 
               }
 
