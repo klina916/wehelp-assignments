@@ -1,7 +1,7 @@
 # 要求三：SQL CRUD
 
 ## 使用 INSERT 指令新增一筆資料到 member 資料表中，這筆資料的 username 和 password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
-### 指令： insert into member (name,username,password) values('test','test','test');
+### 指令： `insert into member (name,username,password) values('test','test','test');`
 
 <img width="813" alt="2022-01-28_23-31-18" src="https://user-images.githubusercontent.com/23125379/151580959-3ee38dbb-5111-4cd5-a1dc-78e0cea3eded.png">
 
