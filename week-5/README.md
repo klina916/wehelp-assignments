@@ -36,6 +36,8 @@
 <img width="815" alt="2022-01-29_00-11-03" src="https://user-images.githubusercontent.com/23125379/151581704-aa4e23d0-4d53-4d80-b25b-f7c29d367cd4.png">
 
 
+
+
 # 要求四：SQL Aggregate Functions
 ## 取得 member 資料表中，總共有幾筆資料 ( 幾位會員 )。
 ### 指令： `select count(id) from member;`
@@ -50,5 +52,5 @@
 ## 取得 member 資料表中，所有會員 follower_count 欄位的平均數。
 ### 指令： `select avg(follower_count) from member;`
 
-
+<img width="774" alt="2022-01-29_00-27-33" src="https://user-images.githubusercontent.com/23125379/151584885-7adf513c-cf67-49b8-87bc-a878547ce65d.png">
 
