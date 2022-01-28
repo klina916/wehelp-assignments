@@ -35,9 +35,11 @@
 
 <img width="815" alt="2022-01-29_00-11-03" src="https://user-images.githubusercontent.com/23125379/151581704-aa4e23d0-4d53-4d80-b25b-f7c29d367cd4.png">
 
-
+  
 ---
-
+  
+  
+  
 # 要求四：SQL Aggregate Functions
 ## 取得 member 資料表中，總共有幾筆資料 ( 幾位會員 )。
 ### 指令： `select count(id) from member;`
