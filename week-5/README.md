@@ -56,3 +56,34 @@
 
 <img width="774" alt="2022-01-29_00-27-33" src="https://user-images.githubusercontent.com/23125379/151584885-7adf513c-cf67-49b8-87bc-a878547ce65d.png">
 
+
+---
+
+# 要求五：SQL JOIN (Optional)
+## 在資料庫中，建立新資料表，取名字為 message。
+### 指令：
+```
+CREATE TABLE `message`( 
+	`id` BIGINT AUTO_INCREMENT, 
+	`member_id` BIGINT NOT NULL, 
+	`content` VARCHAR(255) NOT NULL, 
+	`time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+	PRIMARY KEY(id),
+    FOREIGN KEY(member_id) REFERENCES member(id)
+);
+```
+
+<img width="801" alt="2022-01-29_01-46-49" src="https://user-images.githubusercontent.com/23125379/151596506-d8d80c73-be83-4e96-b4c4-78b9f84a03f2.png">
+
+
+## 使用 SELECT 搭配 JOIN 語法，取得所有留言，結果須包含留言者會員的姓名。
+### 指令： `select content, name from member join message on member_id = member.id;`
+
+<img width="968" alt="2022-01-29_01-22-18" src="https://user-images.githubusercontent.com/23125379/151596640-503c4d8a-3dd6-4c50-a945-04b2765658c1.png">
+
+
+## 使用 SELECT 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留言，資料中須包含留言者會員的姓名。
+### 指令： `select content, name from member join message on member_id = member.id where username = 'test';`
+
+<img width="801" alt="2022-01-29_01-30-23" src="https://user-images.githubusercontent.com/23125379/151596835-85caae3a-4bf2-4666-9e7a-0d2bf9410466.png">
+
