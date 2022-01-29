@@ -87,3 +87,8 @@ CREATE TABLE `message`(
 
 <img width="801" alt="2022-01-29_01-30-23" src="https://user-images.githubusercontent.com/23125379/151596835-85caae3a-4bf2-4666-9e7a-0d2bf9410466.png">
 
+---
+
+# 作業繳交
+## 透過 mysqldump 工具，將資料庫中的資料匯出到檔案 data.sql。
+### 指令： `mysqldump -u root -p --database website > "data.sql"`
