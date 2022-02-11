@@ -27,7 +27,6 @@ def signup():
     username=request.form["username"]
     password=request.form["password"]
 
-    mycursor = mydb.cursor()
     sql = "SELECT username from member WHERE username = %s"
     val = (username, )
     mycursor.execute(sql, val)
@@ -49,7 +48,6 @@ def signin():
     username=request.form["username"]
     password=request.form["password"]
 
-    mycursor = mydb.cursor()
     sql = "SELECT username, password FROM member WHERE username = %s AND password = %s"
     val = (username, password)
     mycursor.execute(sql, val)
