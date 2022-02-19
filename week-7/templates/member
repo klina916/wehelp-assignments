@@ -82,7 +82,7 @@
 <script type="text/javascript">
     function searchmember(){
         let username = document.getElementById("username");
-        console.log(username.value);
+        // console.log(username.value);
         let message = document.getElementById("searchresult");
         let url = "http://127.0.0.1:3000/api/members" + "?username=" + username.value;
         
