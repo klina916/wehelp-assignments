@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首頁</title>
+    <style type="text/css">
+       body{ 
+            margin: 0; padding: 0px; 
+            font-size: x-large;
+        }
+        .header{
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            background-color: #1D4E89;
+            color:white;
+        }
+        .login{
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+              /*定位對齊*/
+            position:relative;   
+            margin: auto;
+            top: 50px;
+            text-align:center;  
+        }
+        .search{
+            width: 600px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+              /*定位對齊*/
+            position:relative;   
+            margin: auto;
+            top: 0px;
+            text-align:center;  
+        }
+        .form{
+            justify-content: center;
+            width: 400px;
+            font-family: 'Noto Sans TC' ,sans-serif;
+        }
+        .message{
+            font-size: x-large;
+        }
+        .btn_group{
+            margin-top: 10px;
+        }
+        .input{
+            width: 150px;height: 25px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <span class="header">歡迎光臨，這是會員頁</span>
+</header>
+<div class="login">
+    <form class="form" action="/signin">
+        <div class="message">{{name}}，歡迎登入系統</div>
+        <div class="btn_group">
+            <a href="/signout">登出系統</a>
+        </div>
+    </form>
+</div>
+<div class="search">
+    <form class="form">
+        <span>查詢會員姓名</span>
+        <div class="btn_group">
+            <input type="text" name="username" id="username">
+            <input type="button" name="search" value="查詢" onclick="searchmember();"/>
+            <p id= "searchresult"></p>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function searchmember(){
+        let username = document.getElementById("username");
+        console.log(username.value);
+        let message = document.getElementById("searchresult");
+        let url = "http://127.0.0.1:3000/api/members" + "?username=" + username.value;
+        
+        fetch(url)
+        .then((response) => {
+            return response.json();
+            console.log(response);
+        })
+        .then((result) => {
+            if(result.data != null) {
+                console.log(result.data);
+                // message.innerHTML = result.data.name + ' ' + '(' +result.data.username + ')';
+                message.textContent  = result.data.name + ' ' + '(' +result.data.username + ')';
+            }
+            else {
+                console.log(result.data);
+                message.innerHTML = 'null';
+            }
+        });
+    };
+</script>
+</body>
+</html>
