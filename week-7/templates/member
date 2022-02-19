@@ -94,7 +94,6 @@
         .then((result) => {
             if(result.data != null) {
                 console.log(result.data);
-                // message.innerHTML = result.data.name + ' ' + '(' +result.data.username + ')';
                 message.textContent  = result.data.name + ' ' + '(' +result.data.username + ')';
             }
             else {
