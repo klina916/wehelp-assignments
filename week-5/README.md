@@ -92,3 +92,6 @@ CREATE TABLE `message`(
 # 作業繳交
 ## 透過 mysqldump 工具，將資料庫中的資料匯出到檔案 data.sql。
 ### 指令： `mysqldump -u root -p --databases website > "data.sql"`
+
+#cmd 登入 MySQL  `mysql -u root -p`
+#cmd 登出 MySQL
